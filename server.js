@@ -8,19 +8,19 @@ const cors = require("cors");
 const multer = require("multer");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Folosește PORT din variabilele de mediu sau 3000 ca valoare implicită
 
 // Configurare baza de date MySQL
 const dbConfig = {
-  host: "localhost",
-  user: "root",
-  password: "tester12",
-  database: "mydatabase",
+  host: process.env.DB_HOST, // Utilizează variabila de mediu
+  port: process.env.DB_PORT, // Utilizează variabila de mediu
+  user: process.env.DB_USER, // Utilizează variabila de mediu
+  password: process.env.DB_PASSWORD, // Utilizează variabila de mediu
+  database: process.env.DB_NAME, // Utilizează variabila de mediu
 };
 
 // Secretul pentru JWT
-const jwtSecret =
-  "uK9!xP2@vQ7#hD6$eB4%rT8&fL1*zM3^jW5(yN0)qE9*sR2@lF7#zH8&kJ1$uT4";
+const jwtSecret = process.env.JWT_SECRET || "default_secret"; // Utilizează variabila de mediu
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
