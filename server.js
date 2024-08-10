@@ -52,7 +52,22 @@ const upload = multer({
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          "https://unpkg.com",
+          "https://kit.fontawesome.com",
+        ],
+        connectSrc: ["'self'", "https://your-app-name.onrender.com"], // Adaugă URL-ul aplicației tale
+        // Adaugă și alte directive după necesitate
+      },
+    },
+  })
+);
 app.use(express.static(path.join(__dirname))); // Servește fișiere statice
 app.use("/uploads", express.static("uploads"));
 
@@ -68,22 +83,6 @@ async function checkDatabaseConnection() {
 }
 
 checkDatabaseConnection();
-
-// Middleware pentru verificarea token-ului
-// function verifyToken(req, res, next) {
-//   const token = req.headers["authorization"];
-//   if (!token) {
-//     return res.status(403).json({ message: "Token-ul este necesar." });
-//   }
-
-//   jwt.verify(token, jwtSecret, (err, decoded) => {
-//     if (err) {
-//       return res.status(403).json({ message: "Token invalid." });
-//     }
-//     req.user = decoded;
-//     next();
-//   });
-// }
 
 // Middleware pentru verificarea token-ului
 function verifyToken(req, res, next) {
