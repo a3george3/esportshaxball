@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Sports HaxBall</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="css/index.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/982b8fc2a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.cdnfonts.com/css/premier-league" rel="stylesheet">
+    <script src="index.js"></script>
+    <script src="login.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href=""><img src="images/logo2.png" alt="" /></a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><form id="searchForm" class="search-form">
+                <input type="text" id="playerSearch" placeholder="Search a player!" autocomplete="off"/>
+                <ul id="searchSuggestions" class="suggestions"></ul>
+    </form></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="elo.html">ELO</a></li>
+      <li><a href="https://discord.gg/dZ4sAnr6">JOIN US!</a></li>
+     <li id="auth-link">
+          <a href="login.html" class="login-button">Log-in</a>
+        </li>
+
+    </ul>
+  </div>
+</nav>
+    <div class="dashboard">
+      <div class="leaguetable">
+        <div class="h2table"><h2>E-Sports Haxball</h2></div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>PTS</th>
+              <th>PL</th>
+              <th>GD</th>
+            </tr>
+          </thead>
+          <tbody id="leagueTableBody"></tbody>
+        </table>
+      </div>
+      <div class="imgarticle">
+        <div class="image-container">
+          <a href=""
+            ><img
+              src="images/imgarticle.png"
+              alt="Sample Image"
+              class="responsive-image"
+            />
+            <div class="image-text">REGISTER NOW!</div></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <section class="cards-section">
+      <div class="cards-container">
+        <div class="stats-card-container">
+          <h4>Goals</h4>
+          <div class="card" id="playersStatsCard"></div>
+        </div>
+        <div class="stats-card-container">
+          <h4>Assists</h4>
+          <div class="card" id="playersAssistsCard"></div>
+        </div>
+        <div class="stats-card-container">
+          <h4>Clean Sheets</h4>
+          <div class="card" id="playersCSCard">Card 1</div>
+        </div>
+        <div class="stats-card-container">
+          <h4>GLS. SCORED</h4>
+          <div class="card" id="teamsGoalsCard">Card 1</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-section">
+      <div class="latest-transfers">
+        <h2>Latest Transfers</h2>
+        <div class="latest-transfers-card">
+          <div class="transfer-card">
+            <div class="transfer-name">
+              <div class="transfer-flag">
+                <img src="images/france.png" alt="" />
+              </div>
+              <span><h2>Hakut</h2></span>
+            </div>
+            <div class="transfer-teams">
+              <img src="images/fear.png" alt="" />
+              <i class="fa-solid fa-arrow-right"></i>
+              <img src="images/logo2.png" alt="" />
+            </div>
+          </div>
+          <div class="transfer-card">
+            <div class="transfer-name">
+              <div class="transfer-flag">
+                <img src="images/france.png" alt="" />
+              </div>
+              <span><h2>Hakut</h2></span>
+            </div>
+            <div class="transfer-teams">
+              <img src="images/fear.png" alt="" />
+              <i class="fa-solid fa-arrow-right"></i>
+              <img src="images/logo2.png" alt="" />
+            </div>
+          </div>
+          <div class="transfer-card">
+            <div class="transfer-name">
+              <div class="transfer-flag">
+                <img src="images/france.png" alt="" />
+              </div>
+              <span><h2>Hakut</h2></span>
+            </div>
+            <div class="transfer-teams">
+              <img src="images/fear.png" alt="" />
+              <i class="fa-solid fa-arrow-right"></i>
+              <img src="images/logo2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="latest-news">
+        <h2>Latest News</h2>
+        <div class="latest-news-card">
+          <div class="news-card">
+            <img
+              src="images/imgarticle.png"
+              alt="Sample Image"
+              class="news-card-img"
+            />
+            <div class="news-card-text">
+              E-Sports Haxball is back!
+              <span class="extra-text">
+                A new and better season will come SOON! Stay tuned for
+                more!</span
+              >
+            </div>
+          </div>
+          <div class="news-card">
+            <img
+              src="images/imgarticle.png"
+              alt="Sample Image"
+              class="news-card-img"
+            />
+            <div class="news-card-text">
+              E-Sports Haxball is back!
+              <span class="extra-text">
+                A new and better season will come SOON! Stay tuned for
+                more!</span
+              >
+            </div>
+          </div>
+          <div class="news-card">
+            <img
+              src="images/imgarticle.png"
+              alt="Sample Image"
+              class="news-card-img"
+            />
+            <div class="news-card-text">
+              E-Sports Haxball is back!
+              <span class="extra-text">
+                A new and better season will come SOON! Stay tuned for
+                more!</span
+              >
+            </div>
+          </div>
+          <div class="news-card">
+            <img
+              src="images/imgarticle.png"
+              alt="Sample Image"
+              class="news-card-img"
+            />
+            <div class="news-card-text">
+              E-Sports Haxball is back!
+              <span class="extra-text">
+                A new and better season will come SOON! Stay tuned for
+                more!</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="leaderboard-container">
+      <div class="latest-season">
+        <h2>ELO Season 14</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Record</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <div class="name-flag">
+                    <img src="images/israel.png" alt="" />
+                    Phami
+                  </div>
+                </td>
+                <td>1596</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <div class="name-flag">
+                    <img src="images/turkey.png" alt="" />
+                    Emre
+                  </div>
+                </td>
+                <td>1498</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <div class="name-flag">
+                    <img src="images/romania.png" alt="" />
+                    Soul
+                  </div>
+                </td>
+                <td>1490</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><div class="name-flag"><img src="images/serbia.png" alt="" />rajsa</td></div>
+                <td>1352</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><div class="name-flag"><img src="images/germany.png" alt="" />VAR</td></div>
+                <td>1337</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><div class="name-flag"><img src="images/italy.png" alt="" />Smithyo</td></div>
+                <td>1330</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><div class="name-flag"><img src="images/serbia.png" alt="" />jeanReno</td></div>
+                <td>1257</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><div class="name-flag"><img src="images/romania.png" alt="" />elite</td></div>
+                <td>1257</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><div class="name-flag"><img src="images/romania.png" alt="" />shotutu</td></div>
+                <td>1248</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><div class="name-flag"><img src="images/czech.png" alt="" />martyk</td></div>
+                <td>1232</td>
+                <td></td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <iframe
+        src="https://www.neatqueue.com/leaderboard/1120686602176442470/1155646661348032542?sort=MMR"
+      ></iframe>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are one of the biggest <span style="color: orange;">Haxball</span> communities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">ELO</a></li>
+                    <li><a href="/users.html">USERS</a></li>
+                </ul>
+            </div>
+            <div class="registeredusers">
+              <p class="registered"></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><span style="color: orange;">DISCORD:</span> Hakut#1757</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 E-SPORTS HAXBALL. All rights reserved.</p>
+        </div>
+    </footer>
+  </body>
+</html>
